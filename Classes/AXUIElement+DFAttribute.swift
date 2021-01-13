@@ -48,7 +48,6 @@ extension AXUIElement{
     
     
     func isMinimized() -> Bool? {
-        kAXCloseButtonSubrole
         var error : AXError = AXError.failure
         return self.value(attributeKey: kAXMinimizedAttribute,error: &error) as? Bool
     }

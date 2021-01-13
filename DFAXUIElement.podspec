@@ -15,8 +15,9 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/DevilFinger/DFAXUIElement.git", :tag => "#{spec.version}" }
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.platform              = :osx
-  spec.osx.deployment_target = '10.9'
+  spec.osx.deployment_target = '10.11'
   spec.source_files  = 'Classes/**/*.{h,m,swift}'
+  spec.swift_versions = '4.0'
 end
 
 
