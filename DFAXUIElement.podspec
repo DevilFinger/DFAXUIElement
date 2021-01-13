@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.platform              = :osx
   spec.osx.deployment_target = '10.9'
-  spec.source_files  = 'DFAXUIElement/**/*'
+  spec.source_files  = 'DFAXUIElement/**/*.{h,m,swift}'
 end
 
 
