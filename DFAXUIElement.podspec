@@ -16,7 +16,20 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.platform              = :osx
   spec.osx.deployment_target = '10.9'
-  spec.source_files  = 'Source/**/*.{h,m,swift}'
+  spec.source_files  = 'Source/DFAXUIElement/**/*.{swift}'
+
+
+  spec.subspec 'CGWindowInfoHelper' do |ss|
+
+    ss.source_files = 'Source/DFAXUIElement/CGWindowInfoHelper/DFCGWindowInfoHelper.swift'
+
+  end
+
+  spec.subspec 'NSRunningApplicationHelper' do |sss|
+
+    sss.source_files = 'Source/DFAXUIElement/NSRunningApplicationHelper/DFNSRunningApplicaitonHelper.swift'
+    
+  end
 
 end
 
