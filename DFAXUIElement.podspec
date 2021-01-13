@@ -9,16 +9,14 @@
 Pod::Spec.new do |spec|
   spec.name         = "DFAXUIElement"
   spec.version      = "1.0"
-  spec.author             = { "raymondchans" => "raymondchans@live.cn" }
+  spec.author       = { "raymondchans" => "raymondchans@live.cn" }
   spec.homepage     = "https://github.com/DevilFinger/DFAXUIElement"
   spec.summary      = "A fastway to use Accessibility API in MacOS with AXUIElement with Swift"
   spec.source       = { :git => "https://github.com/DevilFinger/DFAXUIElement.git", :tag => "#{spec.version}" }
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.platform              = :osx
   spec.osx.deployment_target = '10.9'
-  spec.source_files  = 'DFAXUIElement/Classes/**/*.{swift}'
-
-
+  spec.source_files  = 'DFAXUIElement/Classes/**/*'
 end
 
 
