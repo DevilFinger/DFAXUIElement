@@ -10,16 +10,16 @@ import Cocoa
 
 extension AXUIElement{
     
-    static func windowsWithApplication(app:AXUIElement) -> [AXUIElement]? {
+    public static func windowsWithApplication(app:AXUIElement) -> [AXUIElement]? {
         return app.windows()
     }
     
-    static func windowsWithApplication(pid:pid_t) -> [AXUIElement]?{
+    public static func windowsWithApplication(pid:pid_t) -> [AXUIElement]?{
         let app = AXUIElement.application(pid: pid)
         return app.windows()
     }
     
-    static func windowsWithWindowId(winId:CGWindowID) -> [AXUIElement]?{
+    public static func windowsWithWindowId(winId:CGWindowID) -> [AXUIElement]?{
         
         if let winInfo = DFCGWindowInfoHelper.getCGWindowInfo(windowNumber: Int(winId), option: CGWindowListOption(rawValue: CGWindowListOption.optionOnScreenOnly.rawValue )){
             let pid = winInfo[kCGWindowOwnerPID as String] as! Int
@@ -30,14 +30,14 @@ extension AXUIElement{
     }
     
     
-    static public func focusedWindowInFocusedApplication() -> AXUIElement?{
+    public static func focusedWindowInFocusedApplication() -> AXUIElement?{
         if let app = AXUIElement.focusedApplication(){
             return AXUIElement.focusedWindowInApplication(app: app)
         }
         return nil
     }
     
-    static public func focusedWindowInFrontmostApplication() -> AXUIElement?{
+    public static func focusedWindowInFrontmostApplication() -> AXUIElement?{
         
         if let app = AXUIElement.frontmostApplication(){
             return AXUIElement.focusedWindowInApplication(app: app)
@@ -45,7 +45,7 @@ extension AXUIElement{
         return nil
     }
     
-    static public func focusedWindowInApplication(app:AXUIElement) -> AXUIElement? {
+    public static func focusedWindowInApplication(app:AXUIElement) -> AXUIElement? {
         
         if let winRef = app.value(attributeKey: kAXFocusedWindowAttribute) as! AXUIElement?{
             return winRef
@@ -53,7 +53,7 @@ extension AXUIElement{
         return nil
     }
     
-    static public func mainWindowInFrontmostApplication() -> AXUIElement?{
+    public static func mainWindowInFrontmostApplication() -> AXUIElement?{
         
         if let app = AXUIElement.frontmostApplication(){
             return mainWindowInApplication(app: app)
@@ -61,7 +61,7 @@ extension AXUIElement{
         return nil
     }
     
-    static public func mainWindowInApplication(app:AXUIElement) -> AXUIElement? {
+    public static func mainWindowInApplication(app:AXUIElement) -> AXUIElement? {
         
         if let winRef = app.value(attributeKey: kAXMainWindowAttribute) as! AXUIElement?{
             return winRef
@@ -73,7 +73,7 @@ extension AXUIElement{
     /// 必须建立桥接文件，然后在文件里面暴露私有API的声明 “AXError _AXUIElementGetWindow(AXUIElementRef element, CGWindowID *identifier);”
     /// - Parameter element:Window的AXUIElement
     /// - Returns: 返回对应的windowID
-    func windowID() -> CGWindowID {
+    public func windowID() -> CGWindowID {
         var windowID:CGWindowID = 0
         _AXUIElementGetWindow(self, &windowID)
         return windowID

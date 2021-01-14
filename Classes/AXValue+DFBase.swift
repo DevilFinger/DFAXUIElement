@@ -10,39 +10,37 @@ import Cocoa
 
 extension AXValue{
     
-   
-    
-    func cgSize() -> CGSize? {
+    public func cgSize() -> CGSize? {
         return self.value() as? CGSize
     }
 
-    func cgPoint() -> CGPoint? {
+    public func cgPoint() -> CGPoint? {
         return self.value() as? CGPoint
     }
 
-    func cgRect() -> CGRect? {
+    public func cgRect() -> CGRect? {
         return self.value() as? CGRect
     }
 
-    func cfRange() -> CFRange? {
+    public func cfRange() -> CFRange? {
         return self.value() as? CFRange
     }
 
-    func axError() -> AXError? {
+    public func axError() -> AXError? {
         return self.value() as? AXError
     }
   
-    func type() -> AXValueType {
+    public func type() -> AXValueType {
         return AXValueGetType(self)
     }
     
-    func value() -> Any? {
+    public func value() -> Any? {
         
         var isScuess:Bool = false
         return self.value(isScuess: &isScuess)
     }
     
-    func value(isScuess:inout Bool) -> Any? {
+    public func value(isScuess:inout Bool) -> Any? {
         
         let type = self.type()
         switch type {
@@ -75,28 +73,28 @@ extension AXValue{
         }
     }
     
-    static func create(value:Any,type:AXValueType) -> AXValue? {
+    public static func create(value:Any,type:AXValueType) -> AXValue? {
         var value = value
         return AXValueCreate(type, &value)
     }
     
-    static func createCGPoint(point:CGPoint) -> AXValue? {
+    public static func createCGPoint(point:CGPoint) -> AXValue? {
         return create(value: point, type: AXValueType.cgPoint)
     }
     
-    static func createCGSize(size:CGSize) -> AXValue? {
+    public static func createCGSize(size:CGSize) -> AXValue? {
         return create(value: size, type: AXValueType.cgSize)
     }
     
-    static func createCGRect(rect:CGRect) -> AXValue? {
+    public static func createCGRect(rect:CGRect) -> AXValue? {
         return create(value: rect, type: AXValueType.cgRect)
     }
     
-    static func createCFRange(range:CFRange) -> AXValue? {
+    public static func createCFRange(range:CFRange) -> AXValue? {
         return create(value: range, type: AXValueType.cfRange)
     }
     
-    static func createAXError(error:AXError) -> AXValue? {
+    public static func createAXError(error:AXError) -> AXValue? {
         return create(value: error, type: AXValueType.axError)
     }
 }

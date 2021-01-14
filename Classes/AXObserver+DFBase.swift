@@ -10,51 +10,51 @@ import Cocoa
 
 extension AXObserver {
     
-    static func create(pid:pid_t,callBack:@escaping AXObserverCallback, error:inout AXError) -> AXObserver? {
+    public static func create(pid:pid_t,callBack:@escaping AXObserverCallback, error:inout AXError) -> AXObserver? {
         var observer : AXObserver?
         error = AXObserverCreate(pid, callBack, &observer)
         return observer
     }
     
-    static func create(pid:pid_t,callBack:@escaping AXObserverCallbackWithInfo, error:inout AXError) -> AXObserver? {
+    public static func create(pid:pid_t,callBack:@escaping AXObserverCallbackWithInfo, error:inout AXError) -> AXObserver? {
         var observer : AXObserver?
         error = AXObserverCreateWithInfoCallback(pid, callBack, &observer)
         return observer
     }
     
-    func runLoopSource() -> CFRunLoopSource{
+    public func runLoopSource() -> CFRunLoopSource{
         return AXObserverGetRunLoopSource(self)
     }
     
-    func addNotification(observerKey: String, element: AXUIElement, refcon: UnsafeMutableRawPointer?) -> AXError {
+    public func addNotification(observerKey: String, element: AXUIElement, refcon: UnsafeMutableRawPointer?) -> AXError {
         let error : AXError = AXObserverAddNotification(self, element, observerKey as CFString, refcon)
         return error
     }
     
-    func removeNotification(observerKey: String, element: AXUIElement) -> AXError {
+    public func removeNotification(observerKey: String, element: AXUIElement) -> AXError {
         let error : AXError = AXObserverRemoveNotification(self, element, observerKey as CFString)
         return error
     }
     
-    func addNotificationAndCFRunLoop(observerKey: String, element: AXUIElement, refcon: UnsafeMutableRawPointer?, mode:CFRunLoopMode) -> AXError{
+    public func addNotificationAndCFRunLoop(observerKey: String, element: AXUIElement, refcon: UnsafeMutableRawPointer?, mode:CFRunLoopMode) -> AXError{
         let error = self.addNotification(observerKey: observerKey, element: element, refcon: refcon)
         CFRunLoopAddSource(CFRunLoopGetCurrent(), self.runLoopSource(), mode)
         return error
     }
     
-    func removeNotificationAndCFRunLoop(observerKey: String, element: AXUIElement, mode: CFRunLoopMode) -> AXError {
+    public func removeNotificationAndCFRunLoop(observerKey: String, element: AXUIElement, mode: CFRunLoopMode) -> AXError {
         CFRunLoopRemoveSource(CFRunLoopGetCurrent(), self.runLoopSource(), mode)
         let error = self.removeNotification(observerKey: observerKey, element: element)
         return error
     }
     
-    func addNotificationAndCFRunLoopInDefaultMode(observerKey: String, element: AXUIElement, refcon: UnsafeMutableRawPointer?) -> AXError{
+    public func addNotificationAndCFRunLoopInDefaultMode(observerKey: String, element: AXUIElement, refcon: UnsafeMutableRawPointer?) -> AXError{
         let error = self.addNotification(observerKey: observerKey, element: element, refcon: refcon)
         CFRunLoopAddSource(CFRunLoopGetCurrent(), self.runLoopSource(), CFRunLoopMode.defaultMode)
         return error
     }
     
-    func removeNotificationAndCFRunLoopInDefaultMode(observerKey: String, element: AXUIElement) -> AXError {
+    public func removeNotificationAndCFRunLoopInDefaultMode(observerKey: String, element: AXUIElement) -> AXError {
         CFRunLoopRemoveSource(CFRunLoopGetCurrent(), self.runLoopSource(), CFRunLoopMode.defaultMode)
         let error = self.removeNotification(observerKey: observerKey, element: element)
         return error

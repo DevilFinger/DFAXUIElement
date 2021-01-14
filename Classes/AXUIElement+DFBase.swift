@@ -12,7 +12,7 @@ import Cocoa
 
 extension AXUIElement:Error{
     
-    func value(attributeKey:String, error:inout AXError) -> Any? {
+    public func value(attributeKey:String, error:inout AXError) -> Any? {
         var value : AnyObject?
         let axError = AXUIElementCopyAttributeValue(self, attributeKey as CFString, &value)
         error = axError
@@ -23,17 +23,17 @@ extension AXUIElement:Error{
         }
     }
     
-    func value(attributeKey:String) -> Any? {
+    public func value(attributeKey:String) -> Any? {
         var error : AXError = AXError.failure
         return value(attributeKey: attributeKey, error: &error)
     }
     
-    func valueOfAXUIElement(attributeKey:String) -> AXUIElement? {
+    public func valueOfAXUIElement(attributeKey:String) -> AXUIElement? {
         var error:AXError = AXError.failure
         return valueOfAXUIElement(attributeKey: attributeKey, error: &error)
     }
     
-    func valueOfAXUIElement(attributeKey:String, error:inout AXError) -> AXUIElement? {
+    public func valueOfAXUIElement(attributeKey:String, error:inout AXError) -> AXUIElement? {
         
         if let value  = self.value(attributeKey: attributeKey, error: &error) as CFTypeRef?{
             if CFGetTypeID(value) == AXUIElementGetTypeID(){
@@ -46,7 +46,7 @@ extension AXUIElement:Error{
     }
     
     
-    func values(attributeKey:String, startIndex:Int, endIndex:Int, error: inout AXError) -> [Any?]?   {
+    public func values(attributeKey:String, startIndex:Int, endIndex:Int, error: inout AXError) -> [Any?]?   {
         var values : CFArray?
         error = AXUIElementCopyAttributeValues(self, attributeKey as CFString, startIndex as CFIndex, endIndex as CFIndex, &values)
         if error == .success{
@@ -57,23 +57,23 @@ extension AXUIElement:Error{
         return nil
     }
     
-    func values(attributeKey:String, startIndex:Int, endIndex:Int) -> [Any?]? {
+    public func values(attributeKey:String, startIndex:Int, endIndex:Int) -> [Any?]? {
         var error : AXError = AXError.failure
         return values(attributeKey: attributeKey, startIndex: startIndex, endIndex: endIndex, error: &error)
     }
     
-    func valuesCount(attributeKey:String, error:inout AXError) -> Int {
+    public func valuesCount(attributeKey:String, error:inout AXError) -> Int {
         var index : CFIndex = 0
         error = AXUIElementGetAttributeValueCount(self, attributeKey as CFString, &index)
         return index as Int
     }
     
-    func valuesCount(attributeKey:String) -> Int {
+    public func valuesCount(attributeKey:String) -> Int {
         var error : AXError = AXError.failure
         return valuesCount(attributeKey: attributeKey, error: &error)
     }
     
-    func names(error:inout AXError) -> [String]? {
+    public func names(error:inout AXError) -> [String]? {
         var names : CFArray?
         error = AXUIElementCopyActionNames(self, &names)
         if let array = names as? [String]{
@@ -82,12 +82,12 @@ extension AXUIElement:Error{
         return nil
     }
     
-    func names() -> [String]? {
+    public func names() -> [String]? {
         var error:AXError = AXError.failure
         return names(error: &error)
     }
     
-    func actionName(error:inout AXError) ->  [String]? {
+    public func actionName(error:inout AXError) ->  [String]? {
         var names : CFArray?
         error = AXUIElementCopyActionNames(self, &names)
         if let array = names as? [String]{
@@ -96,12 +96,12 @@ extension AXUIElement:Error{
         return nil
     }
     
-    func actionName() ->  [String]?{
+    public func actionName() ->  [String]?{
         var error :AXError = AXError.failure
         return actionName(error: &error)
     }
     
-    func actionDescription(actionKey: String, error:inout AXError) -> String {
+    public func actionDescription(actionKey: String, error:inout AXError) -> String {
         var desc : CFString?
         error = AXUIElementCopyActionDescription(self, actionKey as CFString, &desc)
         
@@ -111,29 +111,29 @@ extension AXUIElement:Error{
         return ""
     }
     
-    func actionDescription(actionKey: String) -> String {
+    public func actionDescription(actionKey: String) -> String {
         var error:AXError = AXError.failure
         return actionDescription(actionKey: actionKey, error: &error)
     }
     
     
-    func action(actionKey:String) -> AXError {
+    public func action(actionKey:String) -> AXError {
         return AXUIElementPerformAction(self, actionKey as CFString)
     }
     
     
-    func isAttributeSettable(attributeKey:String, error:inout AXError) -> Bool {
+    public func isAttributeSettable(attributeKey:String, error:inout AXError) -> Bool {
         var attributeCanBeSet: DarwinBoolean = false;
         error = AXUIElementIsAttributeSettable(self, attributeKey as CFString, &attributeCanBeSet)
         return attributeCanBeSet.boolValue
     }
     
-    func isAttributeSettable(attributeKey:String) -> Bool {
+    public func isAttributeSettable(attributeKey:String) -> Bool {
         var error :AXError = AXError.failure
         return isAttributeSettable(attributeKey: attributeKey, error: &error)
     }
     
-    func set(attributeKey:String, value:Any) -> AXError {
+    public func set(attributeKey:String, value:Any) -> AXError {
         
         let val = value
         var result : AnyObject
@@ -155,7 +155,7 @@ extension AXUIElement:Error{
         return error
     }
     
-    func multipleValues(attributeKeys:[String], options:AXCopyMultipleAttributeOptions, error:inout AXError) -> [AnyObject]? {
+    public func multipleValues(attributeKeys:[String], options:AXCopyMultipleAttributeOptions, error:inout AXError) -> [AnyObject]? {
         var values : CFArray?
         error = AXUIElementCopyMultipleAttributeValues(self, attributeKeys as CFArray, options, &values)
         if error == .success{
@@ -166,13 +166,13 @@ extension AXUIElement:Error{
         return nil
     }
     
-    func multipleValues(attributeKeys:[String], options:AXCopyMultipleAttributeOptions) -> [AnyObject]? {
+    public func multipleValues(attributeKeys:[String], options:AXCopyMultipleAttributeOptions) -> [AnyObject]? {
         var error : AXError = AXError.failure
         return multipleValues(attributeKeys: attributeKeys, options: options, error: &error)
     }
 
     
-    func parameterizedNames(error:inout AXError) -> [String]? {
+    public func parameterizedNames(error:inout AXError) -> [String]? {
         var names : CFArray?
         error = AXUIElementCopyActionNames(self, &names)
         if let array = names as? [String]{
@@ -181,25 +181,25 @@ extension AXUIElement:Error{
         return nil
     }
     
-    func parameterizedNames() -> [String]? {
+    public func parameterizedNames() -> [String]? {
         var error : AXError = AXError.failure
         return parameterizedNames(error: &error)
     }
     
-    func parameterizedValue(parameterizedAttribute:String,parameter:AnyObject, error:inout AXError) -> AnyObject? {
+    public func parameterizedValue(parameterizedAttribute:String,parameter:AnyObject, error:inout AXError) -> AnyObject? {
         
         var value:AnyObject?
         error = AXUIElementCopyParameterizedAttributeValue(self, parameterizedAttribute as CFString, parameter, &value)
         return value
     }
     
-    func parameterizedValue(parameterizedAttribute:String,parameter:AnyObject) -> AnyObject?{
+    public func parameterizedValue(parameterizedAttribute:String,parameter:AnyObject) -> AnyObject?{
         var error : AXError = AXError.failure
         return parameterizedValue(parameterizedAttribute: parameterizedAttribute, parameter: parameter, error: &error)
     }
     
     
-    static func unPackValue(value: AnyObject) -> Any? {
+    public static func unPackValue(value: AnyObject) -> Any? {
             switch CFGetTypeID(value) {
             case AXUIElementGetTypeID():
                 return value as! AXUIElement

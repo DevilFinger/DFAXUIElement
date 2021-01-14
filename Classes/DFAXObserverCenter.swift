@@ -10,38 +10,38 @@ import Cocoa
 
 public typealias DFAXObserverHandler = (pid_t,String, AXObserver, AXUIElement, CFDictionary?) -> Void
 
-struct DFAXObserverKeyAndPID {
+public struct DFAXObserverKeyAndPID {
     let pid: pid_t
     let key : String
 }
 
-struct DFAXObserverObjAndPID {
+public struct DFAXObserverObjAndPID {
     var observer: AXObserver?
     var pid : pid_t
 }
 
 
-class DFAXObserverCenter{
+public class DFAXObserverCenter:NSObject{
     
-    static let center = DFAXObserverCenter()
+    public static let center = DFAXObserverCenter()
     
     private var _observers : [DFAXObserverObjAndPID] = []
     private var _observerKeys:[DFAXObserverKeyAndPID] = []
     
-    var handler: DFAXObserverHandler?
-    var axObservers: [DFAXObserverObjAndPID]{
+    public var handler: DFAXObserverHandler?
+    public var axObservers: [DFAXObserverObjAndPID]{
         get{
             return _observers
         }
     }
     
-    var axObserverKeys : [DFAXObserverKeyAndPID]{
+    public var axObserverKeys : [DFAXObserverKeyAndPID]{
         get{
             return _observerKeys
         }
     }
     
-    func add(pid:pid_t,observerKey:String) -> AXError {
+    public func add(pid:pid_t,observerKey:String) -> AXError {
         
         let axObserver : AXObserver? = getAXObserver(pid: pid)
         if let observer = axObserver{
@@ -62,7 +62,7 @@ class DFAXObserverCenter{
         
     }
     
-    func remove(pid:pid_t,observerKey: String) -> AXError {
+    public func remove(pid:pid_t,observerKey: String) -> AXError {
         
         let axObserver : AXObserver? = getAXObserver(pid: pid)
         if let observer = axObserver{
@@ -86,14 +86,14 @@ class DFAXObserverCenter{
         return AXError.failure
     }
     
-    func removeAll() {
+    public func removeAll() {
         
         for obj in _observerKeys {
             _ = remove(pid: obj.pid, observerKey: obj.key)
         }
     }
     
-    func removeAll(pid:pid_t)  {
+    public func removeAll(pid:pid_t)  {
         
         for obj in _observerKeys {
             if obj.pid == pid{
@@ -132,7 +132,7 @@ class DFAXObserverCenter{
         }
     }
     
-    func getAXObserver(pid:pid_t) -> AXObserver? {
+    public func getAXObserver(pid:pid_t) -> AXObserver? {
         for obj in _observers {
             if obj.pid == pid{
                 return obj.observer
@@ -141,7 +141,7 @@ class DFAXObserverCenter{
         return nil
     }
     
-    func getPID(observer:AXObserver) -> pid_t? {
+    public func getPID(observer:AXObserver) -> pid_t? {
         for obj in _observers {
             if obj.observer == observer{
                 return obj.pid
@@ -150,7 +150,7 @@ class DFAXObserverCenter{
         return nil
     }
     
-    func isKeyExistInPid(pid:pid_t, observerKey:String) -> Bool {
+    public func isKeyExistInPid(pid:pid_t, observerKey:String) -> Bool {
         let obj = getAXObserverKeyAndPID(pid: pid, observerKey: observerKey)
         if obj != nil{
             return true
@@ -158,7 +158,7 @@ class DFAXObserverCenter{
         return false
     }
     
-    func getAXObserverKeyAndPID(pid:pid_t, observerKey:String) -> DFAXObserverKeyAndPID? {
+    public func getAXObserverKeyAndPID(pid:pid_t, observerKey:String) -> DFAXObserverKeyAndPID? {
         for obj in _observerKeys {
             if obj.pid == pid && obj.key == observerKey{
                 return obj

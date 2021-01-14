@@ -11,56 +11,56 @@ import Cocoa
 extension AXUIElement{
     
     /// Simulate clicking the UIElement, such as a button.
-    func press() -> AXError {
+    public func press() -> AXError {
         return self.action(actionKey: kAXPressAction)
     }
     
     /// Increment the value of the UIElement.
-    func increment() -> AXError {
+    public func increment() -> AXError {
         return self.action(actionKey: kAXIncrementAction)
     }
     
     /// Decrement the value of the UIElement.
-    func decrement() -> AXError {
+    public func decrement() -> AXError {
         return self.action(actionKey: kAXDecrementAction)
     }
     
     /// Simulate pressing Return in the UIElement, such as a text field.
     ///
     /// Don't know if this is still correct. Is this what used to be kAXAcceptAction?
-    func confirm() -> AXError {
+    public func confirm() -> AXError {
         return self.action(actionKey: kAXConfirmAction)
     }
     
     /// Simulate a Cancel action, such as hitting the Cancel button.
-    func cancel() -> AXError {
+    public func cancel() -> AXError {
         return self.action(actionKey: kAXCancelAction)
     }
     
     /// Show alternate or hidden UI.
     ///
     /// This is often used to trigger the same change that would occur on a mouse hover.
-    func showAlternateUI() -> AXError {
+    public func showAlternateUI() -> AXError {
         return self.action(actionKey: kAXShowAlternateUIAction)
     }
     
     /// Show default UI.
     ///
     /// This is often used to trigger the same change that would occur when a mouse hover ends.
-    func showDefaultUI() -> AXError {
+    public func showDefaultUI() -> AXError {
         return self.action(actionKey: kAXShowDefaultUIAction)
     }
     
     
-    func raise() -> AXError {
+    public func raise() -> AXError {
         return self.action(actionKey: kAXRaiseAction)
     }
     
-    func showMenu() -> AXError {
+    public func showMenu() -> AXError {
         return self.action(actionKey: kAXShowMenuAction)
     }
     
-    func pick() -> AXError {
+    public func pick() -> AXError {
         return self.action(actionKey: kAXPickAction)
     }
 }

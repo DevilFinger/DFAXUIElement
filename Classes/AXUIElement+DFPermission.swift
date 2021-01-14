@@ -9,12 +9,12 @@ import Foundation
 import Cocoa
 
 extension AXUIElement{
-    static public func askForAccessibilityIfNeeded() -> Bool {
+    public static func askForAccessibilityIfNeeded() -> Bool {
         let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true]
         return AXIsProcessTrustedWithOptions(options as CFDictionary?)
     }
     
-    static public func checkAppIsAllowToUseAccessibilty() -> Bool {
+    public static func checkAppIsAllowToUseAccessibilty() -> Bool {
         return AXIsProcessTrusted()
     }
 }

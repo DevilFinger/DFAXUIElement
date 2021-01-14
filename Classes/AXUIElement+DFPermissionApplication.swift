@@ -10,13 +10,13 @@ import Cocoa
 
 extension AXUIElement{
  
-    static public let systemWide:AXUIElement = AXUIElementCreateSystemWide()
+    public static let systemWide:AXUIElement = AXUIElementCreateSystemWide()
     
-    static public func application(pid:pid_t) -> AXUIElement{
+    public static func application(pid:pid_t) -> AXUIElement{
        return AXUIElementCreateApplication(pid)
     }
     
-    static public func focusedApplication() -> AXUIElement? {
+    public static func focusedApplication() -> AXUIElement? {
         
         let systemWide = AXUIElement.systemWide
         
@@ -27,7 +27,7 @@ extension AXUIElement{
         }
     }
     
-    static public func frontmostApplication() -> AXUIElement?{
+    public static func frontmostApplication() -> AXUIElement?{
         
         if let app = NSWorkspace.shared.frontmostApplication{
             return AXUIElement.application(pid: app.processIdentifier)
@@ -43,7 +43,7 @@ extension AXUIElement{
     ///   - y: 坐标系的Y
     ///   - error: AXError，以此来获取错误信息
     /// - Returns: 符合条件的AXUIElement
-    static public func elementAtPositionInApplication(app:AXUIElement, x:Float, y: Float, error:inout AXError) -> AXUIElement? {
+    public static func elementAtPositionInApplication(app:AXUIElement, x:Float, y: Float, error:inout AXError) -> AXUIElement? {
         var element : AXUIElement?
         error = AXUIElementCopyElementAtPosition(app, x, y, &element)
         return element
@@ -56,20 +56,20 @@ extension AXUIElement{
     ///   - x: 坐标系的X
     ///   - y: 坐标系的Y
     /// - Returns: 符合条件的AXUIElement
-    static public func elementAtPositionInApplication(app:AXUIElement, x:Float, y: Float) -> AXUIElement? {
+    public static func elementAtPositionInApplication(app:AXUIElement, x:Float, y: Float) -> AXUIElement? {
         var error : AXError = AXError.failure
         return elementAtPositionInApplication(app: app, x: x, y: y, error: &error)
         
     }
     
-    func pid(error:inout AXError) -> pid_t{
+    public func pid(error:inout AXError) -> pid_t{
         
         var pid : pid_t = 0
         error = AXUIElementGetPid(self, &pid)
         return pid
     }
     
-    func pid() -> pid_t{
+    public func pid() -> pid_t{
         var error : AXError = AXError.failure
         return pid(error: &error)
     }
