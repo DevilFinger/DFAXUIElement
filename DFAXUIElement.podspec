@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "DFAXUIElement"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.3"
   spec.author       = { "raymondchans" => "raymondchans@live.cn" }
   spec.homepage     = "https://github.com/DevilFinger/DFAXUIElement"
   spec.summary      = "A fastway to use Accessibility API in MacOS with AXUIElement with Swift"
@@ -21,5 +21,9 @@ Pod::Spec.new do |spec|
   spec.swift_versions = '4.0'
   spec.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 end
+
+
+
+pod trunk register raymondchans@live.cn 'raymondchans' --verbose
 
 
