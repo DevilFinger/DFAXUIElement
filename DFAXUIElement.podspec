@@ -21,9 +21,3 @@ Pod::Spec.new do |spec|
   spec.swift_versions = '4.0'
   spec.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 end
-
-
-
-pod trunk register raymondchans@live.cn 'raymondchans' --verbose
-
-
