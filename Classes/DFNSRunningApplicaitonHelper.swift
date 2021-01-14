@@ -9,7 +9,7 @@ import Foundation
 import Cocoa
 
 
-class DFNSRunningApplicaitonHelper:NSObject{
+public class DFNSRunningApplicaitonHelper:NSObject{
     
     /// 获取当前所有的正在运行的进程APP
     /// - Returns: 返回一个数组，里面全是当前运行的进程
