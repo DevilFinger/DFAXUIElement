@@ -75,7 +75,7 @@ extension AXUIElement:Error{
     
     public func names(error:inout AXError) -> [String]? {
         var names : CFArray?
-        error = AXUIElementCopyActionNames(self, &names)
+        error = AXUIElementCopyAttributeNames(self, &names)
         if let array = names as? [String]{
             return array
         }
