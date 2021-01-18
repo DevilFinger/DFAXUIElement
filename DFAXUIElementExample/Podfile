@@ -1,0 +1,5 @@
+target 'DFAXUIElementExample' do
+  use_frameworks!
+
+pod 'DFAXUIElement'
+end

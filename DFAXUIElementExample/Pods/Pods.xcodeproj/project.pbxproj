@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0084119A2CE9DE2C4583873491E7AE1F /* DFAXObserverCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0CA04C2EBBD49256610DADE8A10A97 /* DFAXObserverCenter.swift */; };
+		0F23676E4ED473AAEF1CAB723B16490A /* AXUIElement+DFWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90629573E17F0C32D5F00A9D8EC15BA /* AXUIElement+DFWindow.swift */; };
+		17D415D9F8B0F3AAD6ED4CF4A2ECFA3A /* AXUIElement+DFApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB5E87F32763BADFE9F377E87F105F5 /* AXUIElement+DFApplication.swift */; };
+		1CACF718A6C5115EBC4BB04F06D13846 /* DFAXUIElement-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B49DE2F5E154543CF4E181B045F191F /* DFAXUIElement-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31D5C049C9B6EB739B5E565AA1EF287D /* Pods-DFAXUIElementExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C486C62CE9F07F45CB7E8AE04C301E7 /* Pods-DFAXUIElementExample-dummy.m */; };
+		45EDA7454B218D21C1D74D60E28BBEF8 /* AXValue+DFBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BE687F4525DD744AB097E039BEDF7 /* AXValue+DFBase.swift */; };
+		58EEB433B5D0A5C46A8E6B4FB3603070 /* DFCGWindowInfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0A6374BDBEE9CAC75AE749F7536366 /* DFCGWindowInfoHelper.swift */; };
+		5B286AF578BC21AC097E198A980C2066 /* Pods-DFAXUIElementExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1D3EDCD919B25D4C92FC2E0627C7270 /* Pods-DFAXUIElementExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65ECCE82C8B43FCB7B73EAC717061626 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
+		69F59F69AA81C39DA64C56A455125E06 /* AXUIElement+DFPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7D87D6C1B8E5F073725C727FFCBAD /* AXUIElement+DFPermission.swift */; };
+		6D85E667A85A35CA3C1F493D77B0AF85 /* DFAXUIElement-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E239079ED67715246C9EDDDE6AC475F /* DFAXUIElement-dummy.m */; };
+		7931C3CC353895E6357038BE614B323F /* AXUIElement+DFAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D22E5845A07EF4A0D85946D4BE0D11 /* AXUIElement+DFAction.swift */; };
+		810AE4694CAA56F7BD2A4FD7F161B26A /* DFAXUIElementBridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 959311DF4797CE95884E4D4CDF592812 /* DFAXUIElementBridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		892AD339887DA235029BD58346F6F3F3 /* DFNSRunningApplicaitonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4366A2156A1B07CC695452BE64BAF7 /* DFNSRunningApplicaitonHelper.swift */; };
+		908BD493E134A0B651816EF978B898BA /* AXError+DFBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D9A9DB4257990129F0F46F10DB2E7 /* AXError+DFBase.swift */; };
+		9385AB0F1A38972D53055258D5AEAAF5 /* AXUIElement+DFBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699F1B69BDFA5CF87D1A7DF9DCF84466 /* AXUIElement+DFBase.swift */; };
+		B9DE9630A3DAFF123AEB0D84FB332DE5 /* AXUIElement+DFAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA63E9BBBE27DCF853732BA4C2629624 /* AXUIElement+DFAttribute.swift */; };
+		E0DA3285C6C809BA2DAD3DC457B34441 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
+		EFA405FAED3C24132658E950D290F2AB /* AXObserver+DFBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12599687FF5C531612F075C1B94F33EE /* AXObserver+DFBase.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B25604ECABA10003C68FAF7AD22FBDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFB5B424E54624DE6D38BBB2AC7FD7D8;
+			remoteInfo = DFAXUIElement;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12599687FF5C531612F075C1B94F33EE /* AXObserver+DFBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AXObserver+DFBase.swift"; path = "Classes/AXObserver+DFBase.swift"; sourceTree = "<group>"; };
+		15D22E5845A07EF4A0D85946D4BE0D11 /* AXUIElement+DFAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AXUIElement+DFAction.swift"; path = "Classes/AXUIElement+DFAction.swift"; sourceTree = "<group>"; };
+		1C486C62CE9F07F45CB7E8AE04C301E7 /* Pods-DFAXUIElementExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DFAXUIElementExample-dummy.m"; sourceTree = "<group>"; };
+		210427CBA0769D6863F2C5EDCA520EBC /* Pods-DFAXUIElementExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DFAXUIElementExample.release.xcconfig"; sourceTree = "<group>"; };
+		301BE687F4525DD744AB097E039BEDF7 /* AXValue+DFBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AXValue+DFBase.swift"; path = "Classes/AXValue+DFBase.swift"; sourceTree = "<group>"; };
+		43FEBA070E95B08E7B4AD339F0D888CF /* Pods-DFAXUIElementExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DFAXUIElementExample-Info.plist"; sourceTree = "<group>"; };
+		49C3C64E93F125B902368F45301B77F0 /* DFAXUIElement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DFAXUIElement.debug.xcconfig; sourceTree = "<group>"; };
+		568CBC048982851E90D322E46AC8CE9A /* Pods_DFAXUIElementExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DFAXUIElementExample.framework; path = "Pods-DFAXUIElementExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5924E9DF8C8B85FC295602A4CC4A85BC /* DFAXUIElement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DFAXUIElement.framework; path = DFAXUIElement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B49DE2F5E154543CF4E181B045F191F /* DFAXUIElement-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DFAXUIElement-umbrella.h"; sourceTree = "<group>"; };
+		5D0A6374BDBEE9CAC75AE749F7536366 /* DFCGWindowInfoHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFCGWindowInfoHelper.swift; path = Classes/DFCGWindowInfoHelper.swift; sourceTree = "<group>"; };
+		697DCC153A5953750F2DF917DAD0C3D4 /* Pods-DFAXUIElementExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DFAXUIElementExample-frameworks.sh"; sourceTree = "<group>"; };
+		699F1B69BDFA5CF87D1A7DF9DCF84466 /* AXUIElement+DFBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AXUIElement+DFBase.swift"; path = "Classes/AXUIElement+DFBase.swift"; sourceTree = "<group>"; };
+		71B2FA5B472AF402320D6B92A49D3E03 /* Pods-DFAXUIElementExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DFAXUIElementExample.modulemap"; sourceTree = "<group>"; };
+		78AD7148F4E7EFD3D447BC10D4EDA011 /* DFAXUIElement.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DFAXUIElement.modulemap; sourceTree = "<group>"; };
+		7EB8A5F844C8C3742185AE6ACCEF1CE9 /* Pods-DFAXUIElementExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DFAXUIElementExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		959311DF4797CE95884E4D4CDF592812 /* DFAXUIElementBridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DFAXUIElementBridging-Header.h"; path = "Classes/DFAXUIElementBridging-Header.h"; sourceTree = "<group>"; };
+		96286E7CF10734F6649018DB0C9ABBB1 /* DFAXUIElement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DFAXUIElement.release.xcconfig; sourceTree = "<group>"; };
+		96B383220F80278B863371BD57B43C5F /* Pods-DFAXUIElementExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DFAXUIElementExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E239079ED67715246C9EDDDE6AC475F /* DFAXUIElement-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DFAXUIElement-dummy.m"; sourceTree = "<group>"; };
+		A638A53B90EE845F394EC62912B61C7B /* DFAXUIElement-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DFAXUIElement-Info.plist"; sourceTree = "<group>"; };
+		A66735DF11A52B0FB6D071FCCCC15BA1 /* Pods-DFAXUIElementExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DFAXUIElementExample.debug.xcconfig"; sourceTree = "<group>"; };
+		AA63E9BBBE27DCF853732BA4C2629624 /* AXUIElement+DFAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AXUIElement+DFAttribute.swift"; path = "Classes/AXUIElement+DFAttribute.swift"; sourceTree = "<group>"; };
+		AB4366A2156A1B07CC695452BE64BAF7 /* DFNSRunningApplicaitonHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFNSRunningApplicaitonHelper.swift; path = Classes/DFNSRunningApplicaitonHelper.swift; sourceTree = "<group>"; };
+		B11DC3259A45D54C145DC7317AA11F5C /* DFAXUIElement-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DFAXUIElement-prefix.pch"; sourceTree = "<group>"; };
+		B1D3EDCD919B25D4C92FC2E0627C7270 /* Pods-DFAXUIElementExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DFAXUIElementExample-umbrella.h"; sourceTree = "<group>"; };
+		C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		CB0CA04C2EBBD49256610DADE8A10A97 /* DFAXObserverCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFAXObserverCenter.swift; path = Classes/DFAXObserverCenter.swift; sourceTree = "<group>"; };
+		DA1D9A9DB4257990129F0F46F10DB2E7 /* AXError+DFBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AXError+DFBase.swift"; path = "Classes/AXError+DFBase.swift"; sourceTree = "<group>"; };
+		DFB5E87F32763BADFE9F377E87F105F5 /* AXUIElement+DFApplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AXUIElement+DFApplication.swift"; path = "Classes/AXUIElement+DFApplication.swift"; sourceTree = "<group>"; };
+		E90629573E17F0C32D5F00A9D8EC15BA /* AXUIElement+DFWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AXUIElement+DFWindow.swift"; path = "Classes/AXUIElement+DFWindow.swift"; sourceTree = "<group>"; };
+		FBD7D87D6C1B8E5F073725C727FFCBAD /* AXUIElement+DFPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AXUIElement+DFPermission.swift"; path = "Classes/AXUIElement+DFPermission.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		519C6A9EACE6E46E4CD692837ED15805 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0DA3285C6C809BA2DAD3DC457B34441 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA19731F216740FB5C63200C7E23B2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65ECCE82C8B43FCB7B73EAC717061626 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1679FB7E4BD53C97A22B6A107E98443E /* DFAXUIElement */ = {
+			isa = PBXGroup;
+			children = (
+				DA1D9A9DB4257990129F0F46F10DB2E7 /* AXError+DFBase.swift */,
+				12599687FF5C531612F075C1B94F33EE /* AXObserver+DFBase.swift */,
+				15D22E5845A07EF4A0D85946D4BE0D11 /* AXUIElement+DFAction.swift */,
+				DFB5E87F32763BADFE9F377E87F105F5 /* AXUIElement+DFApplication.swift */,
+				AA63E9BBBE27DCF853732BA4C2629624 /* AXUIElement+DFAttribute.swift */,
+				699F1B69BDFA5CF87D1A7DF9DCF84466 /* AXUIElement+DFBase.swift */,
+				FBD7D87D6C1B8E5F073725C727FFCBAD /* AXUIElement+DFPermission.swift */,
+				E90629573E17F0C32D5F00A9D8EC15BA /* AXUIElement+DFWindow.swift */,
+				301BE687F4525DD744AB097E039BEDF7 /* AXValue+DFBase.swift */,
+				CB0CA04C2EBBD49256610DADE8A10A97 /* DFAXObserverCenter.swift */,
+				959311DF4797CE95884E4D4CDF592812 /* DFAXUIElementBridging-Header.h */,
+				5D0A6374BDBEE9CAC75AE749F7536366 /* DFCGWindowInfoHelper.swift */,
+				AB4366A2156A1B07CC695452BE64BAF7 /* DFNSRunningApplicaitonHelper.swift */,
+				ADFDCF0F401619C6F155B4DF90150986 /* Support Files */,
+			);
+			name = DFAXUIElement;
+			path = DFAXUIElement;
+			sourceTree = "<group>";
+		};
+		A2966BD204B22DA094238A97A0810EC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5924E9DF8C8B85FC295602A4CC4A85BC /* DFAXUIElement.framework */,
+				568CBC048982851E90D322E46AC8CE9A /* Pods_DFAXUIElementExample.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADFDCF0F401619C6F155B4DF90150986 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				78AD7148F4E7EFD3D447BC10D4EDA011 /* DFAXUIElement.modulemap */,
+				9E239079ED67715246C9EDDDE6AC475F /* DFAXUIElement-dummy.m */,
+				A638A53B90EE845F394EC62912B61C7B /* DFAXUIElement-Info.plist */,
+				B11DC3259A45D54C145DC7317AA11F5C /* DFAXUIElement-prefix.pch */,
+				5B49DE2F5E154543CF4E181B045F191F /* DFAXUIElement-umbrella.h */,
+				49C3C64E93F125B902368F45301B77F0 /* DFAXUIElement.debug.xcconfig */,
+				96286E7CF10734F6649018DB0C9ABBB1 /* DFAXUIElement.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DFAXUIElement";
+			sourceTree = "<group>";
+		};
+		CEC83097D30A69CEB6AB95069D2115E9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE1E0E08B107136E58A71975B7E764EE /* Pods-DFAXUIElementExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				E0A1E60606E0BF6E2E10F1F01350DFE8 /* Frameworks */,
+				E22AD266A8CA95381A6B927CFDFBB0DC /* Pods */,
+				A2966BD204B22DA094238A97A0810EC6 /* Products */,
+				CEC83097D30A69CEB6AB95069D2115E9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E0A1E60606E0BF6E2E10F1F01350DFE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8756CA1FF5258A0344D53C5C60EC1 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E22AD266A8CA95381A6B927CFDFBB0DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1679FB7E4BD53C97A22B6A107E98443E /* DFAXUIElement */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E2A8756CA1FF5258A0344D53C5C60EC1 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		FE1E0E08B107136E58A71975B7E764EE /* Pods-DFAXUIElementExample */ = {
+			isa = PBXGroup;
+			children = (
+				71B2FA5B472AF402320D6B92A49D3E03 /* Pods-DFAXUIElementExample.modulemap */,
+				96B383220F80278B863371BD57B43C5F /* Pods-DFAXUIElementExample-acknowledgements.markdown */,
+				7EB8A5F844C8C3742185AE6ACCEF1CE9 /* Pods-DFAXUIElementExample-acknowledgements.plist */,
+				1C486C62CE9F07F45CB7E8AE04C301E7 /* Pods-DFAXUIElementExample-dummy.m */,
+				697DCC153A5953750F2DF917DAD0C3D4 /* Pods-DFAXUIElementExample-frameworks.sh */,
+				43FEBA070E95B08E7B4AD339F0D888CF /* Pods-DFAXUIElementExample-Info.plist */,
+				B1D3EDCD919B25D4C92FC2E0627C7270 /* Pods-DFAXUIElementExample-umbrella.h */,
+				A66735DF11A52B0FB6D071FCCCC15BA1 /* Pods-DFAXUIElementExample.debug.xcconfig */,
+				210427CBA0769D6863F2C5EDCA520EBC /* Pods-DFAXUIElementExample.release.xcconfig */,
+			);
+			name = "Pods-DFAXUIElementExample";
+			path = "Target Support Files/Pods-DFAXUIElementExample";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1343F67AB1F610EBAAB753AEAFB3B67F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CACF718A6C5115EBC4BB04F06D13846 /* DFAXUIElement-umbrella.h in Headers */,
+				810AE4694CAA56F7BD2A4FD7F161B26A /* DFAXUIElementBridging-Header.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5583FAB4ED059D8D6E08409CE18D911A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B286AF578BC21AC097E198A980C2066 /* Pods-DFAXUIElementExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		54E713121473A969F3298188BF9D1AA2 /* Pods-DFAXUIElementExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F6B2E0CA292470E076519AEA2536098 /* Build configuration list for PBXNativeTarget "Pods-DFAXUIElementExample" */;
+			buildPhases = (
+				5583FAB4ED059D8D6E08409CE18D911A /* Headers */,
+				48217C246D0F0E030A6DEFA946EDF78D /* Sources */,
+				519C6A9EACE6E46E4CD692837ED15805 /* Frameworks */,
+				6B745DA1891D0277D800CFD749CBFFD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46975E6E9A28450A18321E89278CEF77 /* PBXTargetDependency */,
+			);
+			name = "Pods-DFAXUIElementExample";
+			productName = "Pods-DFAXUIElementExample";
+			productReference = 568CBC048982851E90D322E46AC8CE9A /* Pods_DFAXUIElementExample.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EFB5B424E54624DE6D38BBB2AC7FD7D8 /* DFAXUIElement */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DB24019CF1CAA13CE9645B9A14B4EB0 /* Build configuration list for PBXNativeTarget "DFAXUIElement" */;
+			buildPhases = (
+				1343F67AB1F610EBAAB753AEAFB3B67F /* Headers */,
+				F421884BCB28F485A43001E9202FBCB0 /* Sources */,
+				EFA19731F216740FB5C63200C7E23B2E /* Frameworks */,
+				D39A4F46C74657876510646E7FA7F7AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DFAXUIElement;
+			productName = DFAXUIElement;
+			productReference = 5924E9DF8C8B85FC295602A4CC4A85BC /* DFAXUIElement.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = A2966BD204B22DA094238A97A0810EC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFB5B424E54624DE6D38BBB2AC7FD7D8 /* DFAXUIElement */,
+				54E713121473A969F3298188BF9D1AA2 /* Pods-DFAXUIElementExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B745DA1891D0277D800CFD749CBFFD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39A4F46C74657876510646E7FA7F7AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48217C246D0F0E030A6DEFA946EDF78D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31D5C049C9B6EB739B5E565AA1EF287D /* Pods-DFAXUIElementExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F421884BCB28F485A43001E9202FBCB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				908BD493E134A0B651816EF978B898BA /* AXError+DFBase.swift in Sources */,
+				EFA405FAED3C24132658E950D290F2AB /* AXObserver+DFBase.swift in Sources */,
+				7931C3CC353895E6357038BE614B323F /* AXUIElement+DFAction.swift in Sources */,
+				17D415D9F8B0F3AAD6ED4CF4A2ECFA3A /* AXUIElement+DFApplication.swift in Sources */,
+				B9DE9630A3DAFF123AEB0D84FB332DE5 /* AXUIElement+DFAttribute.swift in Sources */,
+				9385AB0F1A38972D53055258D5AEAAF5 /* AXUIElement+DFBase.swift in Sources */,
+				69F59F69AA81C39DA64C56A455125E06 /* AXUIElement+DFPermission.swift in Sources */,
+				0F23676E4ED473AAEF1CAB723B16490A /* AXUIElement+DFWindow.swift in Sources */,
+				45EDA7454B218D21C1D74D60E28BBEF8 /* AXValue+DFBase.swift in Sources */,
+				0084119A2CE9DE2C4583873491E7AE1F /* DFAXObserverCenter.swift in Sources */,
+				6D85E667A85A35CA3C1F493D77B0AF85 /* DFAXUIElement-dummy.m in Sources */,
+				58EEB433B5D0A5C46A8E6B4FB3603070 /* DFCGWindowInfoHelper.swift in Sources */,
+				892AD339887DA235029BD58346F6F3F3 /* DFNSRunningApplicaitonHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46975E6E9A28450A18321E89278CEF77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DFAXUIElement;
+			target = EFB5B424E54624DE6D38BBB2AC7FD7D8 /* DFAXUIElement */;
+			targetProxy = 7B25604ECABA10003C68FAF7AD22FBDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AE172D8F2A4843BFACAD21A0ED26541 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		7E69B8E330DAE0610403786237C00EC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49C3C64E93F125B902368F45301B77F0 /* DFAXUIElement.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DFAXUIElement/DFAXUIElement-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DFAXUIElement/DFAXUIElement-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/DFAXUIElement/DFAXUIElement.modulemap";
+				PRODUCT_MODULE_NAME = DFAXUIElement;
+				PRODUCT_NAME = DFAXUIElement;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		808E544862838153672EA12FCC127D9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B6B9B83FA4DFF877B12C8938382BC358 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A66735DF11A52B0FB6D071FCCCC15BA1 /* Pods-DFAXUIElementExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DFAXUIElementExample/Pods-DFAXUIElementExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MODULEMAP_FILE = "Target Support Files/Pods-DFAXUIElementExample/Pods-DFAXUIElementExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D2025589D11CFEB9628249C9F2967D8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96286E7CF10734F6649018DB0C9ABBB1 /* DFAXUIElement.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DFAXUIElement/DFAXUIElement-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DFAXUIElement/DFAXUIElement-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/DFAXUIElement/DFAXUIElement.modulemap";
+				PRODUCT_MODULE_NAME = DFAXUIElement;
+				PRODUCT_NAME = DFAXUIElement;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E2C9B4FFF76AD5258E8C86CFB1428CED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 210427CBA0769D6863F2C5EDCA520EBC /* Pods-DFAXUIElementExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DFAXUIElementExample/Pods-DFAXUIElementExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MODULEMAP_FILE = "Target Support Files/Pods-DFAXUIElementExample/Pods-DFAXUIElementExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F6B2E0CA292470E076519AEA2536098 /* Build configuration list for PBXNativeTarget "Pods-DFAXUIElementExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6B9B83FA4DFF877B12C8938382BC358 /* Debug */,
+				E2C9B4FFF76AD5258E8C86CFB1428CED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DB24019CF1CAA13CE9645B9A14B4EB0 /* Build configuration list for PBXNativeTarget "DFAXUIElement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E69B8E330DAE0610403786237C00EC0 /* Debug */,
+				D2025589D11CFEB9628249C9F2967D8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808E544862838153672EA12FCC127D9A /* Debug */,
+				0AE172D8F2A4843BFACAD21A0ED26541 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

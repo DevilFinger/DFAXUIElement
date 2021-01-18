@@ -1,0 +1,6 @@
+framework module DFAXUIElement {
+  umbrella header "DFAXUIElement-umbrella.h"
+
+  export *
+  module * { export * }
+}
