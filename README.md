@@ -1,5 +1,7 @@
 # DFAXUIElement
 
+[中文教程](https://github.com/DevilFinger/DFAXUIElement/blob/main/README-Chinese.md)
+
 This is a Swift version to let you use Accessibility API with AXUIElement、AXObserver.
 
 It's a fastway to let you control the MacOS application which is running.
@@ -7,6 +9,10 @@ It's a fastway to let you control the MacOS application which is running.
 Such as get Application window's size、position、 or set the specify value to window's size、postition。
 
 Event if you could get the window minimized button element and press it in coding.
+
+## Version
+
+v.1.0.7
 
 ## Require
 
