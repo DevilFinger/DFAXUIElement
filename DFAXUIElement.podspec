@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "DFAXUIElement"
-  spec.version      = "1.0.6"
+  spec.version      = "1.0.7"
   spec.author       = { "raymondchans" => "raymondchans@live.cn" }
   spec.homepage     = "https://github.com/DevilFinger/DFAXUIElement"
   spec.summary      = "A fastway to use Accessibility API in MacOS with AXUIElement with Swift"
