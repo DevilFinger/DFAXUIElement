@@ -1,13 +1,10 @@
 # DFAXUIElement
 
-This is a Swift version to let you use Accessibility API with AXUIElement、AXObserver.
+这是一个对Accessibility API进行二次封装的Swift库，让你更方便的使用AXUIElement、AXObserver里面的API。
 
-It's a fastway to let you control the MacOS application which is running.
+使用Accessibility API 可以对MacOS上所有的程序进行控制，例如对窗体的大小、位置进行获取和设置。
 
-Such as get Application window's size、position、 or set the specify value to window's size、postition。
-
-Event if you could get the window minimized button element and press it in coding.
-
+甚至可以获取到窗体的按钮，如最小化按钮。并且模拟点击事件。
 ## Require
 
 MacOS 10.11+
@@ -15,11 +12,12 @@ MacOS 10.11+
 Swift 4.0+
 
 
-## Installation
+## 安装
 
 ### CocoaPods
 
-For installation with [CocoaPods](http://cocoapods.org), simply add the following to your `Podfile`:
+
+要使用[CocoaPods](http://cocoapods.org)进行安装，只需将以下内容添加到您的`Podfile`中：
 
 ```
 pod 'DFAXUIElement'
@@ -27,55 +25,54 @@ pod 'DFAXUIElement'
 
 # Warning
 
-When you use the Accessibity API, your MacOS App must be in a non-sandbox mode. So it is difficult to publish in the Apple Store. Especially after the 2012.
+如果想使用Accessibity API，您开发的MacOS APP就必须是非沙盒模式，所以这将很难在苹果商店进行上架。特别是在2012后，苹果新规下，这将变得不可能从正经渠道下进行发布。
 
-If your app must use Accessiblity API, you can refer to the following article. There are instructions on how to publish to the Apple Store. [Click it](https://stackoverflow.com/questions/32116095/how-to-use-accessibility-with-sandboxed-app)
+如果你开发的苹果正在使用Accessibity API，然而你又必须上架，你可以参考下面的文章。里面有介绍如何去和苹果审核团队进行沟通。 [文章链接](https://stackoverflow.com/questions/32116095/how-to-use-accessibility-with-sandboxed-app)
 
 
-## Before to Use
+## 前提条件
 
-### 1. Change APP to non-sanbox mode. 
-
-```
-open the entitlements in your project, and change the property `App Sandbox` to `NO`
-```
-
-### 2. Let Your App Allow Use Accessibility
+### 1. 把你的APP变成非沙盒OS 
 
 ```
-1. Go to System Preferenc -> Security & Privacy -> Accessibiltiy.
-2. if the list don't have your application, press the "+" button to add it
-3. if the list don't have Xcode, press the "+" button to add it
-4. if the list have your application, check it.
-5. if the list have Xcode, check it.
-5) after that , clean and rebuild it.
+打开项目的entitlements文件，然后把里面的属性`App Sandbox` 设置成 `NO`
 ```
 
-# How To Use 
+### 2. 允许您的APP可以使用 Accessibility API
 
-### For more usage methods, please refer to demo！
+```
+1. 打开System Preferenc -> Security & Privacy -> Accessibiltiy.。
+2. 如果列表里面没有您的APP，在最下方有个`+`，点击并且选择您的APP，并且勾选上。
+3. 如果列表里面没有Xcode，在最下方有个`+`，点击并且选择您的APP，并且勾选上。
+4. 如果列表里面有您的APP，请勾选上。
+5. 如果列表里面有您的Xcode，请勾选上。
+6. 在确保上述已经设置好后，请重新回到项目，然后clean并且重新编译运行
+```
+
+# 使用方法 
+
+### 更多的使用方法，请参考demo项目和源代码
 
 ## 1.SandBox Check API:
 
-### If you want to check the Application is Sanbox mode,you could use like this
+### 如果您想检查您的APP是否已经是非沙盒模式，可以使用如下方法：
 
 ```
+//it will return a Bool Value, if ture is sandbox, false is non-sandbox
 AXUIElement.isSandboxingEnabled()
 
-it will return a Bool Value, if ture is sandbox, false is non-sandbox
 ```
 
-## 2.API Enable Check API:
-If u want to check the Application is enable to Use Accessibility API or not, you could use this function as the follow 
+## 2.判断您的APP是否已经运行使用Accessibility API
 
-This will pop up a system-level dialog box for you to choose, when the user selects `deny` or `not determine`.
+这个方法会弹出一个系统层级的alert来询问您是否要使用Accessibility  API。如果用户选择`拒绝` 或者 `还没进行选择`，该alert会弹出。否则该弹出不会弹出。
 
 ```
 `//it will return a Bool Value, if ture is API enabled, false is API disabled`
 let isApiEnable:Bool = AXUIElement.askForAccessibilityIfNeeded()
 ```
 
-Or you don't want to have a prompt,just try this:
+如果您不想要系统层级的弹窗，你可以使用如下方法：
 
 ```
 `//it will return a Bool Value, if ture is enabled, false is API disabled`
@@ -87,7 +84,7 @@ let isApiEnable:Bool = AXUIElement.checkAppIsAllowToUseAccessibilty()
 
 ### Base API
 
-#### Get AXUIElement Value with Key
+#### 根据key获取AXUIElement的值
 
 ``` 
 let windows : [AXUIElement]? = appRef.value(attributeKey: kAXWindowsAttribute) // appRef is a AXUIElement of Application
@@ -98,13 +95,13 @@ let windows:[AXUIElement]? = appRef.value(attributeKey: kAXWindowsAttribute, err
 
 ```
 
-#### AXUIElement Value with Key
+#### 根据key对AXUIElement进行设置值
 
 ```
 let error : AXError = winRef.set(attributeKey: kAXPositionAttribute, value: CGPoint.init(x: x, y: y)) winRef is a AXUIElement of Windows
 ```
 
-#### Check the key is settable
+#### 判断key是否可以进行设置。因为有些值是readonly的
 
 ```
 // winRef is a AXUIElement of Window
@@ -115,7 +112,7 @@ var error:AXError = AXError.failure
 let isSettable:Bool = winRef.isAttributeSettable(attributeKey: kAXSizeAttribute,error: &error)```
 ```
 
-#### Get AXUIElement All Attribute Name
+#### 获取AXUIElement的所有attribute（属性）的key
 
 ```
 // appRef is a AXUIElement of Application
@@ -126,8 +123,7 @@ let isSettable:Bool = winRef.isAttributeSettable(attributeKey: kAXSizeAttribute,
  let attributeNames:[String]? = appRef.names(error: &error)
 ```
 
-#### Get AXUIElement All Action Name
-
+#### 获取AXUIElement的所有action(事件)的key
 ```
 // appRef is a AXUIElement of Application
 let actionNames:[String]? = appRef.actionName()
@@ -138,7 +134,7 @@ let actionNames:[String]? = appRef.actionName(error: &error)
 
 ```
 
-#### Action the AXUIElement With Key
+#### 使用Action对key进行调用。一般如按钮的点击
 
 ```
  //get the minimized button of the window
@@ -148,7 +144,7 @@ let minimizedBtnRef:AXUIElement? = winRef.value(attributeKey: kAXMinimizeButtonA
 minimizedBtnRef?.action(actionKey: kAXPressAction)
 ```
 
-#### A complete example code is as follows
+#### 一个完整的调用代码如下：
 ```
 //Get the AXUIElementRef of current application
         var appRef = AXUIElement.application(pid: DFNSRunningApplicaitonHelper.curApplication().processIdentifier)
@@ -199,9 +195,9 @@ minimizedBtnRef?.action(actionKey: kAXPressAction)
 
 ### Base API
 
-#### Create a Observer of AXObserver
+#### 创建一个AXObserver的Observer对象
 
- 1.define a callback closure
+ 1.声明一个闭包回调
 
 ```
 let _observerCallbackWithInfo: AXObserverCallbackWithInfo = {  (observer, element, notification, userInfo, refcon) in
@@ -209,14 +205,14 @@ let _observerCallbackWithInfo: AXObserverCallbackWithInfo = {  (observer, elemen
 }
 ```
 
-2.create observer obj of AXObserver
+2.创建AXObserver对象
 ```
 var axError : AXError = .failure
 let observer:AXObserver? = AXObserver.create(pid: self.app.processIdentifier, callBack: _observerCallbackWithInfo, error: &axError)
 
 ```
 
-#### Add specify key notification in CFRunLoopDefaultMode
+#### 根据指定key创建一个notification，并且该通知是在CFRunLoopDefaultMode
 
 ```
 func observerAddExampleCode()  {
@@ -227,14 +223,14 @@ func observerAddExampleCode()  {
  }
 ```
 
-In addition, the following methods are provided for calling to add Notification
+同时您还有多个调用方式来添加通知：
 ```
 1.public func addNotificationAndCFRunLoop(observerKey: String, element: AXUIElement, refcon: UnsafeMutableRawPointer?, mode:CFRunLoopMode) -> AXError
 
 2.public func addNotification(observerKey: String, element: AXUIElement, refcon: UnsafeMutableRawPointer?) -> AXError
 ```
 
-#### Remove notification with specify key in CFRunLoopDefaultMode
+#### 根据指定的key移除通知，并且该通知是在CFRunLoopDefaultMode下的
 
 ```
 func observerRemoveExampleCode() {
@@ -244,7 +240,7 @@ func observerRemoveExampleCode() {
 }
 ```
 
-In addition, the following methods are provided for calling to remove Notification
+同时您还有多个调用方式来移除通知：
 ```
 1.public func removeNotification(observerKey: String, element: AXUIElement) -> AXError
 2.public func removeNotificationAndCFRunLoop(observerKey: String, element: AXUIElement, mode: CFRunLoopMode) -> AXError
@@ -252,10 +248,10 @@ In addition, the following methods are provided for calling to remove Notificati
 
 ### DFAXObserverCenter API
 
-#### Use DFAXObserverCenter observer will be automatically created and destroyed, and unified management and scheduling,just like notificationCenter
+#### 这是一个我进行封装的通知单例，可以让你简单的进行添加、移除通知。并且统一管理和调度。
 
 
-#### Add specify key notification in DFAXObserverCenter
+#### 根据指定key创建通知
 
 ```
    func centerOfObserverAddExampleCode() {
@@ -263,7 +259,7 @@ In addition, the following methods are provided for calling to remove Notificati
     }
 ```
 
-#### Remove notification with specify key in DFAXObserverCenter
+#### 根据指定key移除通知
 
 ```
     func centerOfObserverRemoveExampleCode() {
@@ -271,7 +267,7 @@ In addition, the following methods are provided for calling to remove Notificati
     }
 ```
 
-#### Add callback handler closure where you want to receive
+#### 只需要设置handler（闭包形式），则可以快捷的获取到回调。
 
 ```
 DFAXObserverCenter.center.handler = { [weak self] (pid,observerKey, observer, element, info) in
@@ -280,3 +276,4 @@ DFAXObserverCenter.center.handler = { [weak self] (pid,observerKey, observer, el
 ```
 
 
+3
